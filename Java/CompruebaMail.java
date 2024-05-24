@@ -3,7 +3,9 @@ import javax.swing.JOptionPane;
 public class CompruebaMail {
     public static void main(String[] args) {
 
-        boolean arroba=false;
+        int arroba=0;
+
+        boolean punto=false;
 
         String mail=JOptionPane.showInputDialog("Introduce mail");
 
@@ -11,13 +13,19 @@ public class CompruebaMail {
 
             if(mail.charAt(i)=='@'){
 
-                arroba=true;
+                arroba++;
             
+            }
+
+            if(mail.charAt(i)=='.'){
+
+                punto=true;
+
             }
 
         }
 
-        if(arroba==true){
+        if(arroba==1 && punto==true){
 
             System.out.println("Es correcto");
 
